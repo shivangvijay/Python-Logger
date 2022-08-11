@@ -14,6 +14,7 @@ enable_console_log = config.getboolean("Logger","enable_console_log")
 enable_file_log = config.getboolean("Logger","enable_file_log")
 set_log_level = config.getint("Logger","set_log_level")
 File_Size_in_MB = config.getint("Logger","File_Size_in_MB")
+File_prefix_name = config.get("Logger","File_prefix_name")
 
 class Logger:
   __disable_log_level = 1
@@ -28,7 +29,7 @@ class Logger:
   def __init__(self):
     self.__fileCount = 1
     self.__current_log_level = set_log_level
-    self.__prefix = filePath + "/logs/Simulation" + "_"
+    self.__prefix = filePath + "/logs/" + File_prefix_name + "_"
     self.__middle = str(self.timeStamp()) + "__" 
     self.__suffix = ".log"
     self.__filename = self.__prefix + self.__middle + str(self.__fileCount) + self.__suffix
