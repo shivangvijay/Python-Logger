@@ -206,7 +206,7 @@ class Logger:
     if enable_file_log:
       self.__file.write(data)
       file_size = os.path.getsize(self.__filename)
-      if file_size > 15 * 1000000:
+      if file_size > File_Size_in_MB * 1000000:
         self.__file.close()
         self.__fileCount += 1
         self.__filename = self.__filenameBackup + str(self.__fileCount) + self.__suffix
