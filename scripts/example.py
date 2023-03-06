@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from logger import Logger
+from Logger import Logger
 
 inst = Logger()   #or you an use Logger.get_instance() for first time also
 
