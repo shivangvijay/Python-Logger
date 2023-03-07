@@ -38,26 +38,6 @@ class Logger:
           - `debug`: for debugging the program
 
       The log level can be changed dynamically using the `update_log_level` method.
-
-  Example:
-        from logger import Logger
-
-        logger = Logger.get_instance()
-
-        logger.trace("Entering function foo")
-        
-        logger.error("Error in function foo")
-        
-        logger.info("Function foo completed successfully")
-        
-        logger.debug("Variable x = ", x)
-
-        logger.update_log_level(Logger.__disable_log_level) # disable logging
-        logger.update_log_level(Logger.__enable_log_level) # enable logging
-
-        logger.enable_all_logs() # enable all logs
-        
-        logger.disable_all_logs() # disable all logs
   """
   __disable_log_level = 1
   __error_log_level = 2

@@ -32,48 +32,8 @@ This Python Logger designed to be as simple to use and easy to customize.
 Under Development to convert this Module as Library
 ```
 
-# Usage
 
-Step 1: – Add import Logger <br />
-Step 2:- Use it. 
 
-<!-- ![alt text](https://github.com/shivangv6/Logger/blob/main/images/Example.png?raw=true)
-
-Output:- 
-
-![alt text](https://github.com/shivangv6/Logger/blob/main/images/output_example.png?raw=true) -->
-
-Refer examples.py to explore more way to use.
-
-## Customize
-
-Many things are customize through Logger_config.ini in config folder.
-
-<!-- ![alt text](https://github.com/shivangv6/Logger/blob/main/images/config.png?raw=true) -->
-
-1. enable_console_log (bool) :- If required make true, otherwise false
-2. enable_file_log (bool) :-  If required make true, otherwise false
-3. File_Size_in_MB (int) :- After which the new file generated with same name with +1 count number (Rollover Mechanism).
-4. File_prefix_name (str) :- Prefix of File name.
-5. set_log_level (int):- ranges [1-6] Refer below for the mapping of log level and the number
-    - disable_log_level = 1
-    - error_log_level = 2
-    - trace_log_level = 3
-    - debug_log_level = 4
-    - info_log_level = 5
-    - enable_log_level = 6
-  
-Currently I added only 4 levels (ERROR, TRACE, DEBUG, INFO) but other levels or severity can be added easily. 
-
-# Contribution
-
-## GitHub
-
-Please fill bug reports and feature requests here: https://github.com/shivangvijay/Python-Logger/issues <br />
-Fork the repository, make some changes and submit them with pull-request 
-
-## Contact
-Email ID:- shivangvijay@gmail.com, I will answer any questions and requests.
 
 
 
