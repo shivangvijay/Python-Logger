@@ -16,6 +16,17 @@ set_log_level = config.getint("Logger","set_log_level")
 File_Size_in_MB = config.getint("Logger","File_Size_in_MB")
 File_prefix_name = config.get("Logger","File_prefix_name")
 
+def test():
+  """
+  hai toh kuc.
+  
+  tuhjse matlab
+  
+  :return: int 0
+  """
+  
+  return 0
+
 class Logger:
   """
   Logger module defines a logger class that can be used for logging information in a Python program. It supports writing logs to a file and displaying logs on the console. The logger class is implemented as a singleton class.
@@ -40,44 +51,37 @@ class Logger:
       The log level can be changed dynamically using the `update_log_level` method.
 
   Example:
-      ```
-      from logger import Logger
+        from logger import Logger
 
-      logger = Logger.get_instance()
+        logger = Logger.get_instance()
 
-      logger.trace("Entering function foo")
-      logger.error("Error in function foo")
-      logger.info("Function foo completed successfully")
-      logger.debug("Variable x = ", x)
+        logger.trace("Entering function foo")
+        
+        logger.error("Error in function foo")
+        
+        logger.info("Function foo completed successfully")
+        
+        logger.debug("Variable x = ", x)
 
-      logger.update_log_level(Logger.__disable_log_level) # disable logging
-      logger.update_log_level(Logger.__enable_log_level) # enable logging
+        logger.update_log_level(Logger.__disable_log_level) # disable logging
+        logger.update_log_level(Logger.__enable_log_level) # enable logging
 
-      logger.enable_all_logs() # enable all logs
-      logger.disable_all_logs() # disable all logs
-      ```
-
-  Attributes:
-      - `enable_console_log` (bool): whether to enable logging to console
-      - `enable_file_log` (bool): whether to enable logging to file
-      - `set_log_level` (int): the log level to use
-      - `File_Size_in_MB` (int): the maximum size of each log file in megabytes
-      - `File_prefix_name` (str): the prefix to use for log file names
-
-  Methods:
-      - `get_instance()`: get an instance of the logger class
-      - `enable_all_logs()`: enable all log levels
-      - `disable_all_logs()`: disable all log levels
-      - `get_current_log_level()`: get the current log level
-      - `update_log_level(log_level_number)`: update the log level
-      - `timeStamp()`: get the current timestamp
-      - `__consoleLog(data, color)`: write data to console
-      - `__fileLog(data)`: write data to file
-      - `trace(*argv)`: log a message at the TRACE log level
-      - `error(*argv)`: log a message at the ERROR log level
-      - `info(*argv)`: log a message at the INFO log level
-      - `debug(*argv)`: log a message at the DEBUG log level
+        logger.enable_all_logs() # enable all logs
+        
+        logger.disable_all_logs() # disable all logs
 """
+  # Methods:
+  #     - `get_instance()`: get an instance of the logger class
+  #     - `enable_all_logs()`: enable all log levels
+  #     - `disable_all_logs()`: disable all log levels
+  #     - `get_current_log_level()`: get the current log level
+  #     - `update_log_level(log_level_number)`: update the log level
+  #     - `timeStamp()`: get the current timestamp
+  #     - `trace(*argv)`: log a message at the TRACE log level
+  #     - `error(*argv)`: log a message at the ERROR log level
+  #     - `info(*argv)`: log a message at the INFO log level
+  #     - `debug(*argv)`: log a message at the DEBUG log level
+
 
   __disable_log_level = 1
   __error_log_level = 2
@@ -113,8 +117,9 @@ class Logger:
     """
     Gets the singleton instance of the Logger class.
 
-    Returns:
+    :return:
         The Logger instance.
+    :rtype: Logger
     """
     if not Logger.__instance__:
       Logger()
@@ -132,6 +137,9 @@ class Logger:
   def enable_all_logs(self):
     """
     Enables logging for all log levels.
+    
+    :return: None
+    
     """
     self.__current_log_level = Logger.__enable_log_level
     
@@ -139,6 +147,8 @@ class Logger:
   def disable_all_logs(self):
     """
     Disables logging for all log levels.
+    
+    :return: None
     """
     self.__current_log_level = Logger.__disable_log_level
   
@@ -156,13 +166,12 @@ class Logger:
   
   
   def update_log_level(self, log_level_number):
-    """
+    """    
     Updates the current log level used for filtering messages.
     
-    Parameters
-    ----------
-    log_level_number : int
-        The new log level number.
+    :param log_level_number: The new log level number
+    :type: int   
+    :return: None
     """
     self.__current_log_level = log_level_number
     
@@ -171,10 +180,8 @@ class Logger:
     """
     Gets the current timestamp.
     
-    Returns
-    -------
-    datetime.datetime
-        The current timestamp.
+    :return: The current timestamp
+    :rtype: datetime.datetime
     """
     ct = datetime.datetime.now()
     return ct
@@ -213,6 +220,13 @@ class Logger:
         self.__file = open(self.__filename,'w')
 
   def trace(self, *argv):
+    """
+    Log trace information to the file and console.
+
+    :param *argv: The trace information to log.
+    :type *argv: str,int,bool,float
+    :return: None
+    """
     if self.__current_log_level >= Logger.__trace_log_level:
       trace_data = str(self.timeStamp()) + " " + "[TRACE]" + " "
       for arg in argv:
@@ -222,6 +236,13 @@ class Logger:
       self.__consoleLog(trace_data, "yellow")
 
   def error(self, *argv):
+    """
+    Log error information to the file and console.
+
+    :param *argv: The error information to log.
+    :type *argv: str,int,bool,float
+    :return: None
+    """
     if self.__current_log_level >= Logger.__error_log_level:
       error_data = str(self.timeStamp()) + " " + "[ERROR]" + " "
       for arg in argv:
@@ -231,6 +252,13 @@ class Logger:
       self.__consoleLog(error_data, "red")
 
   def info(self, *argv):
+    """
+    Log info information to the file and console.
+
+    :param *argv: The info information to log.
+    :type *argv: str,int,bool,float
+    :return: None
+    """
     if self.__current_log_level >= Logger.__info_log_level:
       info_data = str(self.timeStamp()) + " " + "[INFO]" + " "
       for arg in argv:
@@ -240,6 +268,13 @@ class Logger:
       self.__consoleLog(info_data, "green")
 
   def debug(self, *argv):
+    """
+    Log debug information to the file and console.
+
+    :param *argv: The debug information to log.
+    :type *argv: str,int,bool,float
+    :return: None
+    """
     if self.__current_log_level >= Logger.__debug_log_level:
       debug_data = str(self.timeStamp()) + " " + "[DEBUG]" + " "
       for arg in argv:

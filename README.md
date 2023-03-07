@@ -1,5 +1,9 @@
 # Python-Logger
-Python Logger designed to be as simple to use, easy to customize and very use full in python code base.
+When developing a software application, it is essential to have a logging mechanism in place that records information about the application's behavior. Logging provides valuable insights into the performance and behavior of an application, and it is a necessary tool for debugging and troubleshooting issues.
+
+This Python logging module provides a robust and flexible framework for logging messages from a Python application. The module provides various classes and methods that allow you to customize logging behavior, such as formatting log messages, filtering log records based on their severity, and routing log messages to different handlers.
+
+This Python Logger designed to be as simple to use and easy to customize.
 
 ## Suported platforms:
 #### Developements and tests are done under the following OSs :
@@ -21,8 +25,12 @@ Python Logger designed to be as simple to use, easy to customize and very use fu
 
 ## Install
 
-``$ git clone https://github.com/shivangv6/Logger.git `` <br />
-### Under Development to convert this Module as Library
+``$ git clone https://github.com/shivangvijay/Python-Logger.git `` <br />
+
+
+```{warning}
+Under Development to convert this Module as Library
+```
 
 # Usage
 
@@ -43,11 +51,11 @@ Many things are customize through Logger_config.ini in config folder.
 
 <!-- ![alt text](https://github.com/shivangv6/Logger/blob/main/images/config.png?raw=true) -->
 
-1. enable_console_log :- If required make true, otherwise false
-2. enable_file_log :-  If required make true, otherwise false
-3. File_Size_in_MB :- After which the new file generated with same name with +1 count number (Rollover Mechanism).
-4. File_prefix_name :- Prefix of File name.
-5. set_log_level :- ranges [1-6] Refer below for the mapping of log level and the number
+1. enable_console_log (bool) :- If required make true, otherwise false
+2. enable_file_log (bool) :-  If required make true, otherwise false
+3. File_Size_in_MB (int) :- After which the new file generated with same name with +1 count number (Rollover Mechanism).
+4. File_prefix_name (str) :- Prefix of File name.
+5. set_log_level (int):- ranges [1-6] Refer below for the mapping of log level and the number
     - disable_log_level = 1
     - error_log_level = 2
     - trace_log_level = 3
