@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Recipes &mdash; Python Logger 1.1.0 documentation</title>
+  <title>Recipes &mdash; Python-Logger 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,7 +18,9 @@
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Contribution" href="Contribution.html" />
+    <link rel="prev" title="Examples To Use Python Logger" href="notebooks/tutorial.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -29,12 +31,9 @@
 
           
           
-          <a href="docs.html" class="icon icon-home">
-            Python Logger
+          <a href="index.html" class="icon icon-home">
+            Python-Logger
           </a>
-              <div class="version">
-                1.1.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -44,9 +43,25 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Customize.html">Customize</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/tutorial.html">Examples To Use Python Logger</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Recipes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Logger.Logger"><code class="docutils literal notranslate"><span class="pre">Logger</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Logger.Logger.debug"><code class="docutils literal notranslate"><span class="pre">Logger.debug()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Logger.Logger.disable_all_logs"><code class="docutils literal notranslate"><span class="pre">Logger.disable_all_logs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Logger.Logger.enable_all_logs"><code class="docutils literal notranslate"><span class="pre">Logger.enable_all_logs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Logger.Logger.error"><code class="docutils literal notranslate"><span class="pre">Logger.error()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Logger.Logger.get_current_log_level"><code class="docutils literal notranslate"><span class="pre">Logger.get_current_log_level()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Logger.Logger.get_instance"><code class="docutils literal notranslate"><span class="pre">Logger.get_instance()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Logger.Logger.info"><code class="docutils literal notranslate"><span class="pre">Logger.info()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Logger.Logger.timeStamp"><code class="docutils literal notranslate"><span class="pre">Logger.timeStamp()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Logger.Logger.trace"><code class="docutils literal notranslate"><span class="pre">Logger.trace()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Logger.Logger.update_log_level"><code class="docutils literal notranslate"><span class="pre">Logger.update_log_level()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="Contribution.html">Contribution</a></li>
 </ul>
 
@@ -56,14 +71,14 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="docs.html">Python Logger</a>
+          <a href="index.html">Python-Logger</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="docs.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Recipes</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/Recipe.md.txt" rel="nofollow"> View page source</a>
@@ -102,7 +117,7 @@
 <h1>Recipes<a class="headerlink" href="#recipes" title="Permalink to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="Logger.Logger">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Logger.</span></span><span class="sig-name descname"><span class="pre">Logger</span></span><a class="reference internal" href="_modules/Logger.html#Logger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Logger.</span></span><span class="sig-name descname"><span class="pre">Logger</span></span><a class="headerlink" href="#Logger.Logger" title="Permalink to this definition"></a></dt>
 <dd><p>Logger module defines a logger class that can be used for logging information in a Python program. It supports writing logs to a file and displaying logs on the console. The logger class is implemented as a singleton class.</p>
 <dl>
 <dt>Usage:</dt><dd><p>The logger is initialized when the first instance of the class is created, and subsequent instances are not allowed. To get an instance of the logger class, use the <cite>get_instance</cite> method.</p>
@@ -124,7 +139,7 @@
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="Logger.Logger.debug">
-<span class="sig-name descname"><span class="pre">debug</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.debug"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.debug" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">debug</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argv</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Logger.Logger.debug" title="Permalink to this definition"></a></dt>
 <dd><p>Log debug information to the file and console.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -139,7 +154,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="Logger.Logger.disable_all_logs">
-<span class="sig-name descname"><span class="pre">disable_all_logs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.disable_all_logs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.disable_all_logs" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">disable_all_logs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Logger.Logger.disable_all_logs" title="Permalink to this definition"></a></dt>
 <dd><p>Disables logging for all log levels.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -150,7 +165,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="Logger.Logger.enable_all_logs">
-<span class="sig-name descname"><span class="pre">enable_all_logs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.enable_all_logs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.enable_all_logs" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">enable_all_logs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Logger.Logger.enable_all_logs" title="Permalink to this definition"></a></dt>
 <dd><p>Enables logging for all log levels.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -161,7 +176,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="Logger.Logger.error">
-<span class="sig-name descname"><span class="pre">error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.error" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argv</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Logger.Logger.error" title="Permalink to this definition"></a></dt>
 <dd><p>Log error information to the file and console.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -176,21 +191,20 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="Logger.Logger.get_current_log_level">
-<span class="sig-name descname"><span class="pre">get_current_log_level</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.get_current_log_level"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.get_current_log_level" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_current_log_level</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Logger.Logger.get_current_log_level" title="Permalink to this definition"></a></dt>
 <dd><p>Gets the current log level used for filtering messages.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The current log level used for filtering messages.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)">int</a></p>
+<section id="returns">
+<h2>Returns<a class="headerlink" href="#returns" title="Permalink to this heading"></a></h2>
+<dl class="simple">
+<dt>int</dt><dd><p>The current log level used for filtering messages.</p>
 </dd>
 </dl>
+</section>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="Logger.Logger.get_instance">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_instance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.get_instance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.get_instance" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_instance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Logger.Logger.get_instance" title="Permalink to this definition"></a></dt>
 <dd><p>Gets the singleton instance of the Logger class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -204,7 +218,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="Logger.Logger.info">
-<span class="sig-name descname"><span class="pre">info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.info" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argv</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Logger.Logger.info" title="Permalink to this definition"></a></dt>
 <dd><p>Log info information to the file and console.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -219,21 +233,21 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="Logger.Logger.timeStamp">
-<span class="sig-name descname"><span class="pre">timeStamp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.timeStamp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.timeStamp" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">timeStamp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Logger.Logger.timeStamp" title="Permalink to this definition"></a></dt>
 <dd><p>Gets the current timestamp.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The current timestamp</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.11)">datetime.datetime</a></p>
+<dd class="field-even"><p>datetime.datetime</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="Logger.Logger.trace">
-<span class="sig-name descname"><span class="pre">trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.trace" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argv</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Logger.Logger.trace" title="Permalink to this definition"></a></dt>
 <dd><p>Log trace information to the file and console.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -248,14 +262,14 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="Logger.Logger.update_log_level">
-<span class="sig-name descname"><span class="pre">update_log_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log_level_number</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.update_log_level"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.update_log_level" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">update_log_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log_level_number</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Logger.Logger.update_log_level" title="Permalink to this definition"></a></dt>
 <dd><p>Updates the current log level used for filtering messages.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>log_level_number</strong> – The new log level number</p>
 </dd>
 <dt class="field-even">Type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)">int</a></p>
+<dd class="field-even"><p>int</p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>None</p>
@@ -270,7 +284,10 @@
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="notebooks/tutorial.html" class="btn btn-neutral float-left" title="Examples To Use Python Logger" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Contribution.html" class="btn btn-neutral float-right" title="Contribution" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
