@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; Python Logger 1.1.0 documentation</title>
+  <title>Customize &mdash; Python Logger 1.1.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -16,8 +17,10 @@
         <script src="_static/sphinx_highlight.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="#" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Examples To Use Python Logger" href="notebooks/tutorial.html" />
+    <link rel="prev" title="Python-Logger" href="docs.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -43,10 +46,9 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Customize.html">Customize</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Customize</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/tutorial.html">Examples To Use Python Logger</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Recipe.html">Recipes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Contribution.html">Contribution</a></li>
 </ul>
 
@@ -64,8 +66,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="docs.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Index</li>
+      <li class="breadcrumb-item active">Customize</li>
       <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Customize.md.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -73,96 +76,59 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
 
-<h1 id="index">Index</h1>
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
 
-<div class="genindex-jumpbox">
- <a href="#D"><strong>D</strong></a>
- | <a href="#E"><strong>E</strong></a>
- | <a href="#G"><strong>G</strong></a>
- | <a href="#I"><strong>I</strong></a>
- | <a href="#L"><strong>L</strong></a>
- | <a href="#T"><strong>T</strong></a>
- | <a href="#U"><strong>U</strong></a>
- 
-</div>
-<h2 id="D">D</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="Recipe.html#Logger.Logger.debug">debug() (Logger.Logger method)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="Recipe.html#Logger.Logger.disable_all_logs">disable_all_logs() (Logger.Logger method)</a>
-</li>
-  </ul></td>
-</tr></table>
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
 
-<h2 id="E">E</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="Recipe.html#Logger.Logger.enable_all_logs">enable_all_logs() (Logger.Logger method)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="Recipe.html#Logger.Logger.error">error() (Logger.Logger method)</a>
-</li>
-  </ul></td>
-</tr></table>
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
 
-<h2 id="G">G</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="Recipe.html#Logger.Logger.get_current_log_level">get_current_log_level() (Logger.Logger method)</a>
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="customize">
+<h1>Customize<a class="headerlink" href="#customize" title="Permalink to this heading"></a></h1>
+<p>Many things are customize through Logger_config.ini in config folder.</p>
+<ol class="arabic simple">
+<li><p>enable_console_log (bool) :- If required make true, otherwise false</p></li>
+<li><p>enable_file_log (bool) :-  If required make true, otherwise false</p></li>
+<li><p>File_Size_in_MB (int) :- After which the new file generated with same name with +1 count number (Rollover Mechanism).</p></li>
+<li><p>File_prefix_name (str) :- Prefix of File name.</p></li>
+<li><p>set_log_level (int):- ranges [1-6] Refer below for the mapping of log level and the number</p>
+<ul class="simple">
+<li><p>disable_log_level = 1</p></li>
+<li><p>error_log_level = 2</p></li>
+<li><p>trace_log_level = 3</p></li>
+<li><p>debug_log_level = 4</p></li>
+<li><p>info_log_level = 5</p></li>
+<li><p>enable_log_level = 6</p></li>
+</ul>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="Recipe.html#Logger.Logger.get_instance">get_instance() (Logger.Logger static method)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="I">I</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="Recipe.html#Logger.Logger.info">info() (Logger.Logger method)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="L">L</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="Recipe.html#Logger.Logger">Logger (class in Logger)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="T">T</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="Recipe.html#Logger.Logger.timeStamp">timeStamp() (Logger.Logger method)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="Recipe.html#Logger.Logger.trace">trace() (Logger.Logger method)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="U">U</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="Recipe.html#Logger.Logger.update_log_level">update_log_level() (Logger.Logger method)</a>
-</li>
-  </ul></td>
-</tr></table>
-
+</ol>
+<p>Currently I added only 4 levels (ERROR, TRACE, DEBUG, INFO) but other levels or severity can be added easily.</p>
+</section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="docs.html" class="btn btn-neutral float-left" title="Python-Logger" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="notebooks/tutorial.html" class="btn btn-neutral float-right" title="Examples To Use Python Logger" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

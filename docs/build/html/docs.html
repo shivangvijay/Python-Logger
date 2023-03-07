@@ -15,9 +15,11 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Customize" href="Customize.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -42,44 +44,14 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Python-Logger</a><ul>
-<li><a class="reference internal" href="#suported-platforms">Suported platforms:</a><ul>
-<li><a class="reference internal" href="#developements-and-tests-are-done-under-the-following-oss">Developements and tests are done under the following OSs :</a></li>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Customize.html">Customize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/tutorial.html">Examples To Use Python Logger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Recipe.html">Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Contribution.html">Contribution</a></li>
 </ul>
-</li>
-<li><a class="reference internal" href="#features">Features:-</a></li>
-<li><a class="reference internal" href="#install">Install</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#usage">Usage</a><ul>
-<li><a class="reference internal" href="#customize">Customize</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#contribution">Contribution</a><ul>
-<li><a class="reference internal" href="#github">GitHub</a></li>
-<li><a class="reference internal" href="#contact">Contact</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#recipes">Recipes</a><ul>
-<li><a class="reference internal" href="#Logger.Logger"><code class="docutils literal notranslate"><span class="pre">Logger</span></code></a><ul>
-<li><a class="reference internal" href="#Logger.Logger.debug"><code class="docutils literal notranslate"><span class="pre">Logger.debug()</span></code></a></li>
-<li><a class="reference internal" href="#Logger.Logger.disable_all_logs"><code class="docutils literal notranslate"><span class="pre">Logger.disable_all_logs()</span></code></a></li>
-<li><a class="reference internal" href="#Logger.Logger.enable_all_logs"><code class="docutils literal notranslate"><span class="pre">Logger.enable_all_logs()</span></code></a></li>
-<li><a class="reference internal" href="#Logger.Logger.error"><code class="docutils literal notranslate"><span class="pre">Logger.error()</span></code></a></li>
-<li><a class="reference internal" href="#Logger.Logger.get_current_log_level"><code class="docutils literal notranslate"><span class="pre">Logger.get_current_log_level()</span></code></a></li>
-<li><a class="reference internal" href="#Logger.Logger.get_instance"><code class="docutils literal notranslate"><span class="pre">Logger.get_instance()</span></code></a></li>
-<li><a class="reference internal" href="#Logger.Logger.info"><code class="docutils literal notranslate"><span class="pre">Logger.info()</span></code></a></li>
-<li><a class="reference internal" href="#Logger.Logger.timeStamp"><code class="docutils literal notranslate"><span class="pre">Logger.timeStamp()</span></code></a></li>
-<li><a class="reference internal" href="#Logger.Logger.trace"><code class="docutils literal notranslate"><span class="pre">Logger.trace()</span></code></a></li>
-<li><a class="reference internal" href="#Logger.Logger.update_log_level"><code class="docutils literal notranslate"><span class="pre">Logger.update_log_level()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
+
         </div>
       </div>
     </nav>
@@ -104,7 +76,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="python-logger">
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="python-logger">
 <h1>Python-Logger<a class="headerlink" href="#python-logger" title="Permalink to this heading"></a></h1>
 <p>When developing a software application, it is essential to have a logging mechanism in place that records information about the application’s behavior. Logging provides valuable insights into the performance and behavior of an application, and it is a necessary tool for debugging and troubleshooting issues.</p>
 <p>This Python logging module provides a robust and flexible framework for logging messages from a Python application. The module provides various classes and methods that allow you to customize logging behavior, such as formatting log messages, filtering log records based on their severity, and routing log messages to different handlers.</p>
@@ -141,237 +137,31 @@
 <p class="admonition-title">Warning</p>
 <p>Under Development to convert this Module as Library</p>
 </div>
-</section>
-</section>
-<section id="usage">
-<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h1>
-<p>Step 1: – Add import Logger <br />
-Step 2:- Use it.</p>
-<!-- ![alt text](https://github.com/shivangv6/Logger/blob/main/images/Example.png?raw=true)
-
-Output:- 
-
-![alt text](https://github.com/shivangv6/Logger/blob/main/images/output_example.png?raw=true) -->
-<p>Refer examples.py to explore more way to use.</p>
-<section id="customize">
-<h2>Customize<a class="headerlink" href="#customize" title="Permalink to this heading"></a></h2>
-<p>Many things are customize through Logger_config.ini in config folder.</p>
-<!-- ![alt text](https://github.com/shivangv6/Logger/blob/main/images/config.png?raw=true) -->
-<ol class="arabic simple">
-<li><p>enable_console_log (bool) :- If required make true, otherwise false</p></li>
-<li><p>enable_file_log (bool) :-  If required make true, otherwise false</p></li>
-<li><p>File_Size_in_MB (int) :- After which the new file generated with same name with +1 count number (Rollover Mechanism).</p></li>
-<li><p>File_prefix_name (str) :- Prefix of File name.</p></li>
-<li><p>set_log_level (int):- ranges [1-6] Refer below for the mapping of log level and the number</p>
-<ul class="simple">
-<li><p>disable_log_level = 1</p></li>
-<li><p>error_log_level = 2</p></li>
-<li><p>trace_log_level = 3</p></li>
-<li><p>debug_log_level = 4</p></li>
-<li><p>info_log_level = 5</p></li>
-<li><p>enable_log_level = 6</p></li>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Customize.html">Customize</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/tutorial.html">Examples To Use Python Logger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Recipe.html">Recipes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Recipe.html#Logger.Logger"><code class="docutils literal notranslate"><span class="pre">Logger</span></code></a></li>
 </ul>
 </li>
-</ol>
-<p>Currently I added only 4 levels (ERROR, TRACE, DEBUG, INFO) but other levels or severity can be added easily.</p>
-</section>
-</section>
-<section id="contribution">
-<h1>Contribution<a class="headerlink" href="#contribution" title="Permalink to this heading"></a></h1>
-<section id="github">
-<h2>GitHub<a class="headerlink" href="#github" title="Permalink to this heading"></a></h2>
-<p>Please fill bug reports and feature requests here: https://github.com/shivangv6/Logger/issues <br />
-Fork the repository, make some changes and submit them with pull-request</p>
-</section>
-<section id="contact">
-<h2>Contact<a class="headerlink" href="#contact" title="Permalink to this heading"></a></h2>
-<p>Email ID:- shivangvijay&#64;gmail.com, I will answer any questions and requests.</p>
-</section>
-</section>
-<section id="recipes">
-<h1>Recipes<a class="headerlink" href="#recipes" title="Permalink to this heading"></a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="Logger.Logger">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Logger.</span></span><span class="sig-name descname"><span class="pre">Logger</span></span><a class="reference internal" href="_modules/Logger.html#Logger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger" title="Permalink to this definition"></a></dt>
-<dd><p>Logger module defines a logger class that can be used for logging information in a Python program. It supports writing logs to a file and displaying logs on the console. The logger class is implemented as a singleton class.</p>
-<dl>
-<dt>Usage:</dt><dd><p>The logger is initialized when the first instance of the class is created, and subsequent instances are not allowed. To get an instance of the logger class, use the <cite>get_instance</cite> method.</p>
-<p>To write logs to a file, set the <cite>enable_file_log</cite> parameter in the configuration file to <cite>True</cite>. The logs will be written to a file named <cite>prefix_timestamp_count.log</cite> in the <cite>logs</cite> directory. The <cite>prefix</cite> and <cite>File_prefix_name</cite> parameters can be set in the configuration file.</p>
-<p>To display logs on the console, set the <cite>enable_console_log</cite> parameter in the configuration file to <cite>True</cite>. The logs will be displayed with color-coded text, depending on the log level.</p>
-<p>The log level can be set using the <cite>set_log_level</cite> parameter in the configuration file. The log levels are, in order of increasing severity: <cite>DISABLE</cite>, <cite>ERROR</cite>, <cite>TRACE</cite>, <cite>DEBUG</cite>, <cite>INFO</cite>, and <cite>ENABLE</cite>.</p>
-<p>The <cite>File_Size_in_MB</cite> parameter in the configuration file sets the maximum size of each log file in megabytes. When a log file reaches this size, a new file with a new count is created.</p>
-<dl class="simple">
-<dt>The logger class provides several methods for logging information at different log levels:</dt><dd><ul class="simple">
-<li><p><cite>trace</cite>: for tracing program execution</p></li>
-<li><p><cite>error</cite>: for logging errors</p></li>
-<li><p><cite>info</cite>: for logging information messages</p></li>
-<li><p><cite>debug</cite>: for debugging the program</p></li>
+<li class="toctree-l1"><a class="reference internal" href="Contribution.html">Contribution</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Contribution.html#github">GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Contribution.html#contact">Contact</a></li>
 </ul>
-</dd>
-</dl>
-<p>The log level can be changed dynamically using the <cite>update_log_level</cite> method.</p>
-</dd>
-</dl>
-<p class="rubric">Example</p>
-<p>from logger import Logger</p>
-<p>logger = Logger.get_instance()</p>
-<p>logger.trace(“Entering function foo”)</p>
-<p>logger.error(“Error in function foo”)</p>
-<p>logger.info(“Function foo completed successfully”)</p>
-<p>logger.debug(“Variable x = “, x)</p>
-<p>logger.update_log_level(Logger.__disable_log_level) # disable logging
-logger.update_log_level(Logger.__enable_log_level) # enable logging</p>
-<p>logger.enable_all_logs() # enable all logs</p>
-<p>logger.disable_all_logs() # disable all logs</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="Logger.Logger.debug">
-<span class="sig-name descname"><span class="pre">debug</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.debug"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.debug" title="Permalink to this definition"></a></dt>
-<dd><p>Log debug information to the file and console.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>*argv</strong> – <p>The debug information to log.</p>
-</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="Logger.Logger.disable_all_logs">
-<span class="sig-name descname"><span class="pre">disable_all_logs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.disable_all_logs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.disable_all_logs" title="Permalink to this definition"></a></dt>
-<dd><p>Disables logging for all log levels.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="Logger.Logger.enable_all_logs">
-<span class="sig-name descname"><span class="pre">enable_all_logs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.enable_all_logs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.enable_all_logs" title="Permalink to this definition"></a></dt>
-<dd><p>Enables logging for all log levels.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="Logger.Logger.error">
-<span class="sig-name descname"><span class="pre">error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.error" title="Permalink to this definition"></a></dt>
-<dd><p>Log error information to the file and console.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>*argv</strong> – <p>The error information to log.</p>
-</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="Logger.Logger.get_current_log_level">
-<span class="sig-name descname"><span class="pre">get_current_log_level</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.get_current_log_level"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.get_current_log_level" title="Permalink to this definition"></a></dt>
-<dd><p>Gets the current log level used for filtering messages.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The current log level used for filtering messages.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)">int</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="Logger.Logger.get_instance">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_instance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.get_instance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.get_instance" title="Permalink to this definition"></a></dt>
-<dd><p>Gets the singleton instance of the Logger class.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The Logger instance.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="#Logger.Logger" title="Logger.Logger">Logger</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="Logger.Logger.info">
-<span class="sig-name descname"><span class="pre">info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.info" title="Permalink to this definition"></a></dt>
-<dd><p>Log info information to the file and console.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>*argv</strong> – <p>The info information to log.</p>
-</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="Logger.Logger.timeStamp">
-<span class="sig-name descname"><span class="pre">timeStamp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.timeStamp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.timeStamp" title="Permalink to this definition"></a></dt>
-<dd><p>Gets the current timestamp.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The current timestamp</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.11)">datetime.datetime</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="Logger.Logger.trace">
-<span class="sig-name descname"><span class="pre">trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.trace" title="Permalink to this definition"></a></dt>
-<dd><p>Log trace information to the file and console.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>*argv</strong> – <p>The trace information to log.</p>
-</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="Logger.Logger.update_log_level">
-<span class="sig-name descname"><span class="pre">update_log_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log_level_number</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.update_log_level"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.update_log_level" title="Permalink to this definition"></a></dt>
-<dd><p>Updates the current log level used for filtering messages.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>log_level_number</strong> – The new log level number</p>
-</dd>
-<dt class="field-even">Type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)">int</a></p>
-</dd>
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
+</li>
+</ul>
+</div>
+</section>
 </section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Customize.html" class="btn btn-neutral float-right" title="Customize" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

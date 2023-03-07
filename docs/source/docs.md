@@ -8,9 +8,13 @@
 :relative-images:
 ```
 
-# Recipes
+```{toctree}
+:caption: 'Contents:'
+:maxdepth: 2
 
-```{eval-rst}
-.. autoclass:: Logger.Logger
-   :members:
+Customize
+notebooks/tutorial
+Recipe
+Contribution
+
 ```
