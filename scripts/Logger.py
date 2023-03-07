@@ -16,17 +16,6 @@ set_log_level = config.getint("Logger","set_log_level")
 File_Size_in_MB = config.getint("Logger","File_Size_in_MB")
 File_prefix_name = config.get("Logger","File_prefix_name")
 
-def test():
-  """
-  hai toh kuc.
-  
-  tuhjse matlab
-  
-  :return: int 0
-  """
-  
-  return 0
-
 class Logger:
   """
   Logger module defines a logger class that can be used for logging information in a Python program. It supports writing logs to a file and displaying logs on the console. The logger class is implemented as a singleton class.
@@ -69,20 +58,7 @@ class Logger:
         logger.enable_all_logs() # enable all logs
         
         logger.disable_all_logs() # disable all logs
-"""
-  # Methods:
-  #     - `get_instance()`: get an instance of the logger class
-  #     - `enable_all_logs()`: enable all log levels
-  #     - `disable_all_logs()`: disable all log levels
-  #     - `get_current_log_level()`: get the current log level
-  #     - `update_log_level(log_level_number)`: update the log level
-  #     - `timeStamp()`: get the current timestamp
-  #     - `trace(*argv)`: log a message at the TRACE log level
-  #     - `error(*argv)`: log a message at the ERROR log level
-  #     - `info(*argv)`: log a message at the INFO log level
-  #     - `debug(*argv)`: log a message at the DEBUG log level
-
-
+  """
   __disable_log_level = 1
   __error_log_level = 2
   __trace_log_level = 3
