@@ -8,12 +8,9 @@
 :relative-images:
 ```
 
-## Creating recipes
-
-To create a recipe
+# Recipes
 
 ```{eval-rst}
 .. autoclass:: Logger.Logger
    :members:
-   :undoc-members:
 ```
