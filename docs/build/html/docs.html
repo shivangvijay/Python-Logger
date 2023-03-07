@@ -1,0 +1,526 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
+
+    <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
+        <title>Python Logger 1.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="#"><div class="brand">Python Logger 1.1.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky">
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="python-logger">
+<h1>Python-Logger<a class="headerlink" href="#python-logger" title="Permalink to this heading">#</a></h1>
+<p>When developing a software application, it is essential to have a logging mechanism in place that records information about the application’s behavior. Logging provides valuable insights into the performance and behavior of an application, and it is a necessary tool for debugging and troubleshooting issues.</p>
+<p>This Python logging module provides a robust and flexible framework for logging messages from a Python application. The module provides various classes and methods that allow you to customize logging behavior, such as formatting log messages, filtering log records based on their severity, and routing log messages to different handlers.</p>
+<p>This Python Logger designed to be as simple to use and easy to customize.</p>
+<section id="suported-platforms">
+<h2>Suported platforms:<a class="headerlink" href="#suported-platforms" title="Permalink to this heading">#</a></h2>
+<section id="developements-and-tests-are-done-under-the-following-oss">
+<h3>Developements and tests are done under the following OSs :<a class="headerlink" href="#developements-and-tests-are-done-under-the-following-oss" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Ubuntu 14.04, 16.04, 18.04 and 20.04</p></li>
+<li><p>Windows 10</p></li>
+<li><p>Linux, FreeBSD, OpenBSD, Solaris, AIX</p></li>
+<li><p>macOS</p></li>
+</ul>
+</section>
+</section>
+<section id="features">
+<h2>Features:-<a class="headerlink" href="#features" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Simple Integration.</p></li>
+<li><p>Designed by using <em><strong>singleton design pattern</strong></em> for easy to use.</p></li>
+<li><p>Easily Customizable and Flexible.</p></li>
+<li><p>Custom formatting.</p></li>
+<li><p>Rollover Mechanism, Uses can defined the file size, after which the new file generated with same name with +1 count number.</p></li>
+<li><p>Console logging (colors supported) and File logging with human readble timestamp.</p></li>
+<li><p>Log filtering - log levels can be modified in runtime as well as in compile time.</p></li>
+<li><p>Very Fast, Small and Simple Logger.</p></li>
+</ul>
+</section>
+<section id="install">
+<h2>Install<a class="headerlink" href="#install" title="Permalink to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/shivangvijay/Python-Logger.git</span> </code> <br /></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Under Development to convert this Module as Library</p>
+</div>
+</section>
+</section>
+<section id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h1>
+<p>Step 1: – Add import Logger <br />
+Step 2:- Use it.</p>
+<!-- ![alt text](https://github.com/shivangv6/Logger/blob/main/images/Example.png?raw=true)
+
+Output:- 
+
+![alt text](https://github.com/shivangv6/Logger/blob/main/images/output_example.png?raw=true) -->
+<p>Refer examples.py to explore more way to use.</p>
+<section id="customize">
+<h2>Customize<a class="headerlink" href="#customize" title="Permalink to this heading">#</a></h2>
+<p>Many things are customize through Logger_config.ini in config folder.</p>
+<!-- ![alt text](https://github.com/shivangv6/Logger/blob/main/images/config.png?raw=true) -->
+<ol class="arabic simple">
+<li><p>enable_console_log (bool) :- If required make true, otherwise false</p></li>
+<li><p>enable_file_log (bool) :-  If required make true, otherwise false</p></li>
+<li><p>File_Size_in_MB (int) :- After which the new file generated with same name with +1 count number (Rollover Mechanism).</p></li>
+<li><p>File_prefix_name (str) :- Prefix of File name.</p></li>
+<li><p>set_log_level (int):- ranges [1-6] Refer below for the mapping of log level and the number</p>
+<ul class="simple">
+<li><p>disable_log_level = 1</p></li>
+<li><p>error_log_level = 2</p></li>
+<li><p>trace_log_level = 3</p></li>
+<li><p>debug_log_level = 4</p></li>
+<li><p>info_log_level = 5</p></li>
+<li><p>enable_log_level = 6</p></li>
+</ul>
+</li>
+</ol>
+<p>Currently I added only 4 levels (ERROR, TRACE, DEBUG, INFO) but other levels or severity can be added easily.</p>
+</section>
+</section>
+<section id="contribution">
+<h1>Contribution<a class="headerlink" href="#contribution" title="Permalink to this heading">#</a></h1>
+<section id="github">
+<h2>GitHub<a class="headerlink" href="#github" title="Permalink to this heading">#</a></h2>
+<p>Please fill bug reports and feature requests here: https://github.com/shivangv6/Logger/issues <br />
+Fork the repository, make some changes and submit them with pull-request</p>
+</section>
+<section id="contact">
+<h2>Contact<a class="headerlink" href="#contact" title="Permalink to this heading">#</a></h2>
+<p>Email ID:- shivangvijay&#64;gmail.com, I will answer any questions and requests.</p>
+</section>
+<section id="creating-recipes">
+<h2>Creating recipes<a class="headerlink" href="#creating-recipes" title="Permalink to this heading">#</a></h2>
+<p>To create a recipe</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="Logger.Logger">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Logger.</span></span><span class="sig-name descname"><span class="pre">Logger</span></span><a class="reference internal" href="_modules/Logger.html#Logger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger" title="Permalink to this definition">#</a></dt>
+<dd><p>Logger module defines a logger class that can be used for logging information in a Python program. It supports writing logs to a file and displaying logs on the console. The logger class is implemented as a singleton class.</p>
+<dl>
+<dt>Usage:</dt><dd><p>The logger is initialized when the first instance of the class is created, and subsequent instances are not allowed. To get an instance of the logger class, use the <cite>get_instance</cite> method.</p>
+<p>To write logs to a file, set the <cite>enable_file_log</cite> parameter in the configuration file to <cite>True</cite>. The logs will be written to a file named <cite>prefix_timestamp_count.log</cite> in the <cite>logs</cite> directory. The <cite>prefix</cite> and <cite>File_prefix_name</cite> parameters can be set in the configuration file.</p>
+<p>To display logs on the console, set the <cite>enable_console_log</cite> parameter in the configuration file to <cite>True</cite>. The logs will be displayed with color-coded text, depending on the log level.</p>
+<p>The log level can be set using the <cite>set_log_level</cite> parameter in the configuration file. The log levels are, in order of increasing severity: <cite>DISABLE</cite>, <cite>ERROR</cite>, <cite>TRACE</cite>, <cite>DEBUG</cite>, <cite>INFO</cite>, and <cite>ENABLE</cite>.</p>
+<p>The <cite>File_Size_in_MB</cite> parameter in the configuration file sets the maximum size of each log file in megabytes. When a log file reaches this size, a new file with a new count is created.</p>
+<dl class="simple">
+<dt>The logger class provides several methods for logging information at different log levels:</dt><dd><ul class="simple">
+<li><p><cite>trace</cite>: for tracing program execution</p></li>
+<li><p><cite>error</cite>: for logging errors</p></li>
+<li><p><cite>info</cite>: for logging information messages</p></li>
+<li><p><cite>debug</cite>: for debugging the program</p></li>
+</ul>
+</dd>
+</dl>
+<p>The log level can be changed dynamically using the <cite>update_log_level</cite> method.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>from logger import Logger</p>
+<p>logger = Logger.get_instance()</p>
+<p>logger.trace(“Entering function foo”)</p>
+<p>logger.error(“Error in function foo”)</p>
+<p>logger.info(“Function foo completed successfully”)</p>
+<p>logger.debug(“Variable x = “, x)</p>
+<p>logger.update_log_level(Logger.__disable_log_level) # disable logging
+logger.update_log_level(Logger.__enable_log_level) # enable logging</p>
+<p>logger.enable_all_logs() # enable all logs</p>
+<p>logger.disable_all_logs() # disable all logs</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Logger.Logger.debug">
+<span class="sig-name descname"><span class="pre">debug</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.debug"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.debug" title="Permalink to this definition">#</a></dt>
+<dd><p>Log debug information to the file and console.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>*argv</strong> – <p>The debug information to log.</p>
+</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Logger.Logger.disable_all_logs">
+<span class="sig-name descname"><span class="pre">disable_all_logs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.disable_all_logs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.disable_all_logs" title="Permalink to this definition">#</a></dt>
+<dd><p>Disables logging for all log levels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Logger.Logger.enable_all_logs">
+<span class="sig-name descname"><span class="pre">enable_all_logs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.enable_all_logs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.enable_all_logs" title="Permalink to this definition">#</a></dt>
+<dd><p>Enables logging for all log levels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Logger.Logger.error">
+<span class="sig-name descname"><span class="pre">error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.error" title="Permalink to this definition">#</a></dt>
+<dd><p>Log error information to the file and console.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>*argv</strong> – <p>The error information to log.</p>
+</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Logger.Logger.get_current_log_level">
+<span class="sig-name descname"><span class="pre">get_current_log_level</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.get_current_log_level"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.get_current_log_level" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets the current log level used for filtering messages.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The current log level used for filtering messages.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Logger.Logger.get_instance">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_instance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.get_instance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.get_instance" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets the singleton instance of the Logger class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The Logger instance.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#Logger.Logger" title="Logger.Logger">Logger</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Logger.Logger.info">
+<span class="sig-name descname"><span class="pre">info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.info" title="Permalink to this definition">#</a></dt>
+<dd><p>Log info information to the file and console.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>*argv</strong> – <p>The info information to log.</p>
+</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Logger.Logger.timeStamp">
+<span class="sig-name descname"><span class="pre">timeStamp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.timeStamp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.timeStamp" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets the current timestamp.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The current timestamp</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.11)">datetime.datetime</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Logger.Logger.trace">
+<span class="sig-name descname"><span class="pre">trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">argv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.trace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.trace" title="Permalink to this definition">#</a></dt>
+<dd><p>Log trace information to the file and console.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>*argv</strong> – <p>The trace information to log.</p>
+</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Logger.Logger.update_log_level">
+<span class="sig-name descname"><span class="pre">update_log_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log_level_number</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Logger.html#Logger.update_log_level"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Logger.Logger.update_log_level" title="Permalink to this definition">#</a></dt>
+<dd><p>Updates the current log level used for filtering messages.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>log_level_number</strong> – The new log level number</p>
+</dd>
+<dt class="field-even">Type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)">int</a></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Shivang Vijay
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Python-Logger</a><ul>
+<li><a class="reference internal" href="#suported-platforms">Suported platforms:</a><ul>
+<li><a class="reference internal" href="#developements-and-tests-are-done-under-the-following-oss">Developements and tests are done under the following OSs :</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#features">Features:-</a></li>
+<li><a class="reference internal" href="#install">Install</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#usage">Usage</a><ul>
+<li><a class="reference internal" href="#customize">Customize</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#contribution">Contribution</a><ul>
+<li><a class="reference internal" href="#github">GitHub</a></li>
+<li><a class="reference internal" href="#contact">Contact</a></li>
+<li><a class="reference internal" href="#creating-recipes">Creating recipes</a><ul>
+<li><a class="reference internal" href="#Logger.Logger"><code class="docutils literal notranslate"><span class="pre">Logger</span></code></a><ul>
+<li><a class="reference internal" href="#Logger.Logger.debug"><code class="docutils literal notranslate"><span class="pre">Logger.debug()</span></code></a></li>
+<li><a class="reference internal" href="#Logger.Logger.disable_all_logs"><code class="docutils literal notranslate"><span class="pre">Logger.disable_all_logs()</span></code></a></li>
+<li><a class="reference internal" href="#Logger.Logger.enable_all_logs"><code class="docutils literal notranslate"><span class="pre">Logger.enable_all_logs()</span></code></a></li>
+<li><a class="reference internal" href="#Logger.Logger.error"><code class="docutils literal notranslate"><span class="pre">Logger.error()</span></code></a></li>
+<li><a class="reference internal" href="#Logger.Logger.get_current_log_level"><code class="docutils literal notranslate"><span class="pre">Logger.get_current_log_level()</span></code></a></li>
+<li><a class="reference internal" href="#Logger.Logger.get_instance"><code class="docutils literal notranslate"><span class="pre">Logger.get_instance()</span></code></a></li>
+<li><a class="reference internal" href="#Logger.Logger.info"><code class="docutils literal notranslate"><span class="pre">Logger.info()</span></code></a></li>
+<li><a class="reference internal" href="#Logger.Logger.timeStamp"><code class="docutils literal notranslate"><span class="pre">Logger.timeStamp()</span></code></a></li>
+<li><a class="reference internal" href="#Logger.Logger.trace"><code class="docutils literal notranslate"><span class="pre">Logger.trace()</span></code></a></li>
+<li><a class="reference internal" href="#Logger.Logger.update_log_level"><code class="docutils literal notranslate"><span class="pre">Logger.update_log_level()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    </body>
+</html>
