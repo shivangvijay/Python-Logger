@@ -1,4 +1,4 @@
-sphinx==4.2.0
+sphinx
 myst-parser
 nbsphinx
 sphinx_rtd_theme

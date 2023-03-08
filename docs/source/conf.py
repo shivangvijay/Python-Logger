@@ -8,7 +8,7 @@
 
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../../scripts'))
+sys.path.insert(0, os.path.abspath('../../Logger'))
 
 project = 'Python-Logger'
 copyright = '2023, Shivang Vijay'
@@ -20,6 +20,7 @@ release = '1.0.0'
 
 extensions = ['myst_parser',
               'sphinx.ext.autodoc',
+              'sphinx.ext.napoleon',
               'nbsphinx'  #MyST-NB
               ]
 
