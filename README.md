@@ -5,7 +5,7 @@ This Python logging module provides a robust and flexible framework for logging 
 
 This Python Logger designed to be as simple to use and easy to customize.
 
-View Documnetation of the Project:- [python-logger.readthedocs.io](https://python-logger.readthedocs.io/en/latest/)
+View Documentation of the Project:- [python-logger.readthedocs.io](https://python-logger.readthedocs.io/en/latest/)
 
 ## Suported platforms:
 #### Developements and tests are done under the following OSs :
