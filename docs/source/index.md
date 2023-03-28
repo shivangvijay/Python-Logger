@@ -14,7 +14,7 @@
 
 Customize
 notebooks/tutorial
-Recipe
+<!-- Recipe -->
 Contribution
 
 ```
